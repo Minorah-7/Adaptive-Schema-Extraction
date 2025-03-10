@@ -1,102 +1,120 @@
-Source Code Documentation
-This folder contains the implementation of the Adaptive Schema Extraction project, organized by development stages. Below are instructions to set up dependencies, execute the code, and customize the extraction process.
+# README for Source Code Folders (Stage 1, Stage 2, Stage 3)
 
-Directory Structure
-Copy
-source_code/
-├── stage1_text_extraction/      # Code for Stage 1 (Basic OCR + ROI)
-├── stage2_full_image_processing/ # Code for Stage 2 (Full-Image Extraction)
-├── stage3_adaptive_roi/         # Code for Stage 3 (Priority-Based ROI Extraction)
-├── utils/                       # Helper scripts and configurations
-├── app.py                       # Streamlit web application
-└── requirements.txt             # Dependency list
-Installation
-Prerequisites:
+This README provides an overview of the source code in the `Stage 1`, `Stage 2`, and `Stage 3` folders. Each stage corresponds to a specific part of the project, focusing on different tasks such as data extraction, preprocessing, and analysis.
 
-Python 3.8+
+---
 
-Tesseract OCR Engine (Installation Guide)
+## **Stage 1: Data Extraction from Aadhaar**
+### **Overview**
+This stage focuses on extracting specific information from Aadhaar card images, such as the Aadhaar number and name. The code uses predefined ROIs to crop relevant sections of the image and applies OCR to extract text.
 
-Install Dependencies:
+### **How It Works**
+1. **Image Loading**:
+   - Aadhaar card images are loaded using OpenCV and PIL.
 
-bash
-Copy
-pip install -r requirements.txt
-Key dependencies:
+2. **ROI Cropping**:
+   - Predefined ROIs are used to crop sections of the image containing the Aadhaar number and name.
 
-OpenCV (opencv-python)
+3. **Text Extraction**:
+   - The `pytesseract` library extracts text from the cropped regions.
+   - Extracted text is cleaned and stored in a DataFrame.
 
-PyTesseract (pytesseract)
+4. **Data Storage**:
+   - The extracted data is saved to an Excel file (`aadhaar_details.xlsx`).
 
-Pandas (pandas)
+### **Key Features**
+- Predefined ROIs for accurate cropping.
+- Handles variations in Aadhaar card layouts.
+- Saves extracted data in a structured format.
 
-Streamlit (streamlit)
+### **Usage**
+1. Place Aadhaar card images in the specified folder.
+2. Run the script to extract Aadhaar numbers and names.
+3. The extracted data is saved in `aadhaar_details.xlsx`.
 
-Configure Tesseract Path (if not in system PATH):
+## **Stage 1: Data Extraction from Recipts**
 
-python
-Copy
-# In your Python script:
-pytesseract.pytesseract.tesseract_cmd = r'<your_tesseract_installation_path>'
-Execution Steps
-Stage 1: Basic Text Extraction
-Place input images in /dataset/stage1_samples/
 
-Run:
+### **Overview**
+This stage focuses on extracting structured data from receipt images using Optical Character Recognition (OCR). The code processes images, identifies key regions of interest (ROIs), and extracts text such as store names, dates, and total amounts.
 
-bash
-Copy
-python stage1_text_extraction/stage1_aadhar_extraction.py --input <image_path> --output <output_csv_path>
-Stage 2: Full-Image Processing
-bash
-Copy
-python stage2_full_image_processing/stage2_engineering_drawing_extractor.py --input <drawing_image_path> --excel_output <output.xlsx>
-Stage 3: Adaptive ROI Extraction
-Configure ROIs in stage3_adaptive_roi/roi_config.json:
+### **How It Works**
+1. **Image Preprocessing**: 
+   - Images are loaded and converted to grayscale for better OCR accuracy.
+   - Adaptive thresholding is applied to enhance text visibility.
 
-json
-Copy
-{
-  "roi_1": {
-    "coordinates": [x1, y1, x2, y2],
-    "priority": 1,
-    "label": "material_spec"
-  }
-}
-Execute:
+2. **Text Extraction**:
+   - The `pytesseract` library is used to extract text from predefined ROIs.
+   - Regular expressions are applied to identify store names, dates, and total amounts.
 
-bash
-Copy
-python stage3_adaptive_roi/adaptive_extraction.py --input <drawing_path> --config roi_config.json --output <data.xlsx>
-Streamlit Web Interface
-bash
-Copy
-streamlit run app.py
-Access via http://localhost:8501 after execution.
+3. **Data Storage**:
+   - Extracted data is stored in a Pandas DataFrame and saved to an Excel file (`receipt_data.xlsx`).
 
-Customization Guide
-ROI Adjustment: Modify coordinates in roi_config.json for different drawing formats
+### **Key Features**
+- Supports multiple receipt formats.
+- Handles noisy images with preprocessing techniques.
+- Extracts structured data for further analysis.
 
-Output Formatting: Edit utils/excel_writer.py to change Excel column structure
+### **Usage**
+1. Place receipt images in the `receipts_img` folder.
+2. Run the script to process all images and extract data.
+3. The extracted data is saved in `receipt_data.xlsx`.
 
-OCR Tuning: Adjust PyTesseract parameters in utils/ocr_processor.py:
 
-python
-Copy
-config = '--psm 6 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-Testing
-Sample images are provided in /dataset/test_images/. Run:
+## **Stage 2&3: Engineering Drawing Data Extraction**
 
-bash
-Copy
-python -m pytest tests/
-Troubleshooting
-Tesseract Path Errors: Verify installation path in pytesseract.pytesseract.tesseract_cmd
+### **Overview**
+This stage focuses on extracting text from engineering drawings. The code processes images, identifies horizontal and vertical ROIs, and extracts text using OCR.
 
-Dependency Conflicts: Use a virtual environment
+### **How It Works**
+1. **Image Cropping**:
+   - Images are cropped to focus on specific regions of interest (ROIs).
 
-Image Format Issues: Convert images to PNG/JPG before processing
+2. **ROI Definition**:
+   - Horizontal and vertical ROIs are defined to capture text from different parts of the drawing.
 
-For detailed project rationale and methodology, refer to the main README.
+3. **Text Extraction**:
+   - The `pytesseract` library extracts text from the defined ROIs.
+   - Extracted text is stored in a DataFrame.
 
-This inner README provides technical execution details while linking to the high-level documentation in the main README. It includes actionable commands and configuration examples for developers working directly with the codebase.
+4. **Data Storage**:
+   - The extracted data is saved to an Excel file (`extracted_ed.xlsx`).
+
+### **Key Features**
+- Supports multiple ROIs for comprehensive text extraction.
+- Handles complex engineering drawings.
+- Saves extracted data in a structured format.
+
+### **Usage**
+1. Place engineering drawing images in the specified folder.
+2. Run the script to extract text from the drawings.
+3. The extracted data is saved in `extracted_ed.xlsx`.
+
+---
+
+## **Installation and Dependencies**
+To run the code in all stages, install the required libraries using the following commands:
+
+```bash
+pip install opencv-python numpy pytesseract openpyxl pandas keras-ocr
+```
+
+Additionally, ensure Tesseract OCR is installed on your system and update the `pytesseract.pytesseract.tesseract_cmd` path in the code.
+
+---
+
+## **Output Files**
+- **Stage 1**: `receipt_data.xlsx` (Extracted receipt data).
+- **Stage 2**: `aadhaar_details.xlsx` (Extracted Aadhaar card data).
+- **Stage 3**: `extracted_ed.xlsx` (Extracted engineering drawing data).
+
+---
+
+## **Notes**
+- Modify the input and output folder paths in the code as needed.
+- Ensure images are clear and properly aligned for accurate text extraction.
+- For best results, use high-quality images with minimal noise.
+
+---
+
+This README provides a high-level overview of the code in each stage. For detailed implementation, refer to the source code in the respective folders.
