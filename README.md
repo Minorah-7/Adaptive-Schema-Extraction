@@ -3,7 +3,7 @@ Research project focusing on automated extraction of data from engineering drawi
 
 **This project was a collaborative effort by Team Matrix, consisting of three team members:**
 1. Owais Hussain: [Git Hub](https://github.com/owais-syed) , [LinkedIn](https://www.linkedin.com/feed/)
-2. Jyothindra Pallikonda: Git Hub :  , Linkedin : 
+2. Jyothindra Pallikonda: [Git Hub](https://github.com/Minorah-7)  , [Linkedin](https://www.linkedin.com/in/minorah-palli-01b286266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 3. Minorah Palli: Git Hub :  , Linkedin : 
 
 **Project Overview:**  
