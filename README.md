@@ -1,6 +1,11 @@
 # Adaptive Schema Extraction: A Multi-Stage Learning Approach for Manufacturing Drawing Interpretation.
 Research project focusing on automated extraction of data from engineering drawings. Implemented a progressive ROI refinement methodology.
 
+**This project was a collaborative effort by Team Matrix, consisting of three team members:**
+1. Owais Hussain: [Git Hub](https://github.com/owais-syed) , [LinkedIn](https://www.linkedin.com/feed/)
+2. Jyothindra Pallikonda: Git Hub :  , Linkedin : 
+3. Minorah Palli: Git Hub :  , Linkedin : 
+
 **Project Overview:**  
 In manufacturing industries, extracting data from engineering drawings plays a vital role in automating machine processes and ensuring production accuracy. Traditionally, this process is done manually, which can be both time-consuming and error-prone. Our project aims to automate this task, using image recognition and text extraction techniques to pull relevant data directly from engineering drawings, reducing the chance for mistakes and speeding up the workflow.
 The project is divided into three key stages, each focusing on progressively improving the accuracy and adaptability of the extraction process. Below is a brief overview of each stage:
