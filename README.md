@@ -3,8 +3,8 @@ Research project focusing on automated extraction of data from engineering drawi
 
 **This project was a collaborative effort by Team Matrix, consisting of three team members:**
 1. Owais Hussain: [Git Hub](https://github.com/owais-syed) , [LinkedIn](https://www.linkedin.com/feed/)
-2. Jyothindra Pallikonda: [Git Hub](https://github.com/Minorah-7)  , [Linkedin](https://www.linkedin.com/in/minorah-palli-01b286266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
-3. Minorah Palli: Git Hub :  , Linkedin : 
+2. Jyothindra Pallikonda: Git Hub :  , Linkedin : 
+3. Minorah Palli:[Git Hub](https://github.com/Minorah-7)  , [Linkedin](https://www.linkedin.com/in/minorah-palli-01b286266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 **Project Overview:**  
 In manufacturing industries, extracting data from engineering drawings plays a vital role in automating machine processes and ensuring production accuracy. Traditionally, this process is done manually, which can be both time-consuming and error-prone. Our project aims to automate this task, using image recognition and text extraction techniques to pull relevant data directly from engineering drawings, reducing the chance for mistakes and speeding up the workflow.
