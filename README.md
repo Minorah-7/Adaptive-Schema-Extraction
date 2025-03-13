@@ -33,7 +33,7 @@ In the final stage, we introduced a more refined approach using Region of Intere
 
 ![Capture](https://github.com/user-attachments/assets/e622fa4e-d0fc-47b8-86af-eaa0ac46e8e7)
 
-**Try it out** @ https://adaptiveschemaextraction-4qf2ry7zxvpisblv3zdiqd.streamlit.app/
+**Try it out** @ https://adaptiveschemaextraction-matrix.streamlit.app/
 
 
 https://github.com/user-attachments/assets/022fc860-daea-4211-97bd-22a4c2e1a37a
